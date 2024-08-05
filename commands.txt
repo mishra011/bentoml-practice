@@ -1,0 +1,19 @@
+
+
+bentoml serve server.py:Summarization
+
+python3 tester.py
+
+
+
+Open http://localhost:3000/ in Browser and test out using restAPI 
+
+curl -X 'POST' \
+  'http://localhost:3000/summarize' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "texts": [
+    "I am Deepak. I live in India. I am developer. I have 8 years work experience."
+  ]
+}'
