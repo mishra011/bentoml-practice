@@ -13,5 +13,10 @@ class Summarization:
     def summarize(self, texts: List[str]) -> List[str]:
         results = self.pipeline(texts)
         return [item['summary_text'] for item in results]
+    
+    @bentoml.api()
+    def summ(self, texts: List[str]) -> List[str]:
+        results = self.pipeline(texts)
+        return [item['summary_text'] for item in results]
 
 
